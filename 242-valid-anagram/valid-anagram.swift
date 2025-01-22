@@ -3,6 +3,20 @@ class Solution {
         if s.count != t.count{
             return false
         }
-        return s.sorted() == t.sorted()  
+
+        var dict = [Character: Int]()
+
+        for char in s{
+            dict[char, default: 0] += 1
+        }  
+        
+        for char in t{
+            if let count = dict[char], count > 0{
+                dict[char] = count - 1
+            }else{
+                return false
+            }
+        }
+    return true
     }
 }
