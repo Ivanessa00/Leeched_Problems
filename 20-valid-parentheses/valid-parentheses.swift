@@ -7,13 +7,13 @@ class Solution {
 
         for char in s {
             switch char{
-                case "(" : stack.append(")")
-                case "{" : stack.append("}")
-                case "[" : stack.append("]")
+                case "(": stack.append(")")
+                case "{": stack.append("}")
+                case "[": stack.append("]")
                 default:
                 if stack.isEmpty || stack.removeLast() != char{
                     return false
-                } 
+                }
             }
         }
     return stack.isEmpty
